@@ -127,3 +127,42 @@ tm_shape(shp = shp_dados_geral) +
           style = "quantile", 
           n = 4, 
           palette = "viridis")
+
+# adicionando um histograma
+
+tm_shape(shp = shp_dados_geral)+
+  tm_fill(col = 'idh',
+          style = 'quantile',
+          n = 4,
+          palette = 'plasma',
+          legend.hist = TRUE)
+
+# Reposicionando o histogrma
+
+tm_shape(shp = shp_dados_geral)+
+  tm_fill(col = 'idh',
+          style = 'quantile',
+          n = 4,
+          palette = 'inferno',
+          legend.hist = TRUE)+
+  tm_layout(legend.outside = TRUE)
+
+# Posicionando manualmente o histograma e adicionando titulo
+
+tm_shape(shp = shp_dados_geral)+
+  tm_fill(col = 'idh',
+          style = 'quantile',
+          n = 4,
+          palette = 'magma',
+          legend.hist = TRUE)+
+  tm_layout(legend.text.size = 0.7,
+            legend.title.size = 0.9,
+            legend.hist.size = 0.5,
+            legend.hist.height = 0.2,
+            legend.hist.width = 0.3,
+            frame = FALSE,
+            main.title = 'A distribuicao do IDH nos munucipios de SP')
+
+
+
+
